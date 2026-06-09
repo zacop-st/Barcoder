@@ -3,23 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Barkod/Mal No Arama</title>
+  <title>Barkod / Mal No Arama</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.6/dist/JsBarcode.all.min.js"></script>
 </head>
 <body>
-  <h1>Ürün Arama</h1>
+  <h1>Ürün Arama Uygulaması</h1>
 
+  <!-- Barkod Arama -->
   <div class="search-box">
     <input id="barkodInput" type="text" placeholder="Barkod gir">
     <button onclick="searchByBarkod()">Ara</button>
   </div>
 
+  <!-- Mal No Arama -->
   <div class="search-box">
     <input id="malnoInput" type="text" placeholder="Mal No gir">
     <button onclick="searchByMalNo()">Ara</button>
   </div>
 
+  <!-- Kategori / Aile / Alt Aile / Ürün Grup Filtreleme -->
+  <div class="search-box">
+    <label>Kategori:</label>
+    <select id="kategoriSelect" onchange="loadAileOptions()">
+      <option value="">--Kategori seç--</option>
+    </select>
+
+    <label>Aile:</label>
+    <select id="aileSelect" onchange="loadAltAileOptions()">
+      <option value="">--Aile seç--</option>
+    </select>
+
+    <label>Alt Aile:</label>
+    <select id="altAileSelect" onchange="loadUrunGrupOptions()">
+      <option value="">--Alt Aile seç--</option>
+    </select>
+
+    <label>Ürün Grup:</label>
+    <select id="urunGrupSelect" onchange="searchByFilters()">
+      <option value="">--Ürün Grup seç--</option>
+    </select>
+  </div>
+
+  <!-- Sonuçlar -->
   <div id="results"></div>
 
   <script src="app.js"></script>
