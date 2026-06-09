@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Barkod/Mal No Arama</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.6/dist/JsBarcode.all.min.js"></script>
+</head>
+<body>
+  <h1>Ürün Arama</h1>
+
+  <div class="search-box">
+    <input id="barkodInput" type="text" placeholder="Barkod gir">
+    <button onclick="searchByBarkod()">Ara</button>
+  </div>
+
+  <div class="search-box">
+    <input id="malnoInput" type="text" placeholder="Mal No gir">
+    <button onclick="searchByMalNo()">Ara</button>
+  </div>
+
+  <div id="results"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
